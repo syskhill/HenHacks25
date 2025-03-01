@@ -1,6 +1,6 @@
 :root {
-    --theme-color: gold;
-    --theme-dark-color: #557A95;
+    --theme-color: rgb(0, 255, 221);
+    --theme-dark-color: #000000;
     --primary-font-color: #5D5C61;
     --link-font-color: white;
  }
@@ -10,8 +10,8 @@
     font-family: Helvetica, sans-serif;
     color: var(--primary-font-color);
     padding: 10px;
-    width: 400px;
-    height: 500px;
+    width: 1000px;
+    height: 700px;
  }
  
  a {
