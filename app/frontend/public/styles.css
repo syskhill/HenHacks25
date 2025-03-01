@@ -14,7 +14,7 @@
     font-family: 'Times New Roman', Times, serif;
     color: var(--theme-dark-color);
     padding: 10px;
-    background-image:'cyber.jpg';
+    background-image:url(cyber.jpg);
     background-size: cover;
     background-position: center;
 
