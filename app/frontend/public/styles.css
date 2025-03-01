@@ -6,12 +6,14 @@
  }
  
  body {
-    background-color: var(--theme-color);
-    font-family: Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: var(--primary-font-color);
     padding: 10px;
     width: 1000px;
     height: 700px;
+    background-image: url('cyber.jpg');
+    background-size: cover;
+    background-position: center;
  }
  
  a {
@@ -23,7 +25,6 @@
     color: var(--theme-dark-color);
     font-size: 2rem;
     margin: 10px 0;
-    text-shadow: 2px 2px 3px gray;
  }
  
  .stretch-image {
@@ -31,7 +32,6 @@
  }
  
  ul {
-    background-image: url("check.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60vw;
