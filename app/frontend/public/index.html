@@ -11,7 +11,7 @@
     <script src="Scanner.js" defer></script>
     <script src="dangerMessages.js" defer></script>
 </head>
-
+<div class="container">
 <body>
     <header>
         <h1>Welcome to Email Phishing Protection!</h1>
@@ -19,10 +19,11 @@
     </header>
     <main>
         <form id="scanForm">
-            <button onclick="window.location.href='results.html';">Scan</button>
+            <a href="#" onclick="window.open('results.html', '_blank'); return false;">Scan</a>
         </form>
         <div id="dangerMessage"></div>
     </main>
 </body>
+</div>
 
 </html>
