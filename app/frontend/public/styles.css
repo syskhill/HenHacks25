@@ -37,6 +37,8 @@
     color: var(--theme-dark-color);
     font-size: 2rem;
     margin: 10px 0;
+    align-items: center;
+    justify-content: center;
  }
  
  .stretch-image {
