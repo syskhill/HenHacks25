@@ -7,8 +7,8 @@
  html, body {
    margin: 0px;
    padding: 0px;
-   width: 100%;
-   height: 100%;
+   width: 800px;
+   height: 800px;
    overflow-x: hidden;
  }
  body {
@@ -18,6 +18,7 @@
     background-image: url('cyber.jpg');
     background-size: cover;
     background-position: center;
+
  }
 
  .container {
