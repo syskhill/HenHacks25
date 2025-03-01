@@ -1,55 +1,59 @@
 :root {
-    --theme-color: rgb(0, 255, 221);
-    --theme-dark-color: #000000;
-    --link-font-color: white;
- }
- html, body {
-   margin: 0px;
-   padding: 0px;
-   width: 800px;
-   height: 800px;
-   overflow-x: hidden;
- }
- body {
-    font-family: 'Times New Roman', Times, serif;
-    color: var(--theme-dark-color);
-    padding: 10px;
-    background-image:url('cyber.jpg');
-    background-size: cover;
-    background-position: center;
+   --theme-color: #00FFD9;
+   --dark-bg: #121212;
+   --light-bg: rgba(255, 255, 255, 0.85);
+   --font-color: #000000;
+}
 
- }
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Arial', sans-serif;
+}
 
- .container {
-   height: 325px;
-   width: 325px;
-   background-color: rgba(255, 255, 255, 0.8);
-   border-radius: 10px;
- }
- 
- a {
-    text-decoration: none;
-    color: var(--theme-dark-color);
- }
- 
- header > h1 {
-    color: var(--theme-dark-color);
-    font-size: 2rem;
-    margin: 10px 0;
-    align-items: center;
-    justify-content: center;
- }
- 
- .stretch-image {
-    width: 100vw;
- }
- 
- ul {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60vw;
- }
- #scanForm{
-   text-decoration: underline;
- }
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-image: url('cyber.jpg');
+   background-size: cover;
+   background-position: center;
+}
+
+.container {
+   width: 400px;
+   padding: 20px;
+   background-color: var(--light-bg);
+   border-radius: 15px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+   text-align: center;
+}
+
+h1 {
+   font-size: 1.8rem;
+   color: var(--font-color);
+   margin-bottom: 10px;
+}
+
+h2 {
+   font-size: 1.2rem;
+   color: var(--font-color);
+   margin-bottom: 20px;
+}
+
+a {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 1rem;
+   color: white;
+   background: var(--theme-color);
+   border-radius: 8px;
+   text-decoration: none;
+}
+
+a:hover {
+   background: #00CCAA;
+}
 
