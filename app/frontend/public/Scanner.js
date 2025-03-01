@@ -29,22 +29,22 @@ function changeBackgroundColor(color) {
     document.documentElement.style.setProperty('--background-color', color);
 }
 
-function showDangerLevel(email)
+function showDangerLevel(dangerLevel)
 {
-    if(--BackgroundColor == green)
+    if(dangerLevel <= 3)
     {
-        messageElement.textContent = 'This email seems safe.';
+        console.log('This email seems safe.');
     }
-    else if(--BackgroundColor == orange)
+    else if(dangerLevel <= 7)
     {
-        messageElement.textContent = 'This email might be suspicious.';
+        console.log('This email might be suspicious.');
     }
-    else if(--BackgroundColor == red)
+    else if(dangerLevel <= 10)
     {
-        messageElement.textContent = 'This email is dangerous!';
+        console.log('This email is dangerous!');
     }
     else
     {
-        messageElement.textContent = 'Unable to determine the danger level.';
+        console.error('Unable to determine the danger level.');
     }
 }
