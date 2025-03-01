@@ -54,3 +54,13 @@
    background-color: rgba(255, 255, 255, 0.8);
    border-radius: 10px;
  }
+
+ #container {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(18, 216, 84, 0.664);
+    color: var(--theme-dark-color);
+ }
