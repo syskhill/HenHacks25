@@ -14,7 +14,7 @@
     font-family: 'Times New Roman', Times, serif;
     color: var(--theme-dark-color);
     padding: 10px;
-    background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('cyber.jpg');
+    background-image:'cyber.jpg';
     background-size: cover;
     background-position: center;
 
