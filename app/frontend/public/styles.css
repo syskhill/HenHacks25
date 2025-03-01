@@ -1,7 +1,6 @@
 :root {
     --theme-color: rgb(0, 255, 221);
     --theme-dark-color: #000000;
-    --primary-font-color: #5D5C61;
     --link-font-color: white;
  }
  html, body {
@@ -13,7 +12,7 @@
  }
  body {
     font-family: 'Times New Roman', Times, serif;
-    color: var(--primary-font-color);
+    color: var(--theme-dark-color);
     padding: 10px;
     background-image: url('cyber.jpg');
     background-size: cover;
@@ -22,8 +21,8 @@
  }
 
  .container {
-   height: 250px;
-   width: 250px;
+   height: 325px;
+   width: 325px;
    background-color: rgba(255, 255, 255, 0.8);
    border-radius: 10px;
  }
