@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<container class="app">
-
 <head>
-    <title>Don't Hack us Please</title>
+    <meta charset="UTF-8">
+    <title>Email Scanner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <script src="Popup.js" defer></script>
@@ -13,42 +12,18 @@
 
 <body>
     <header>
-        <h1>Welcome to Don't Hack us Please.</h1>
+        <h1>Email Scanner</h1>
         <h2>Do you want us to scan your email?</h2>
     </header>
     <main>
-        <div>
-            <button type="button" class="scan email" data-bs-dismiss="modal">Scan email</button>
-        </div>
-        <div class="modal fade" id="scanModal" tabindex="-1" aria-labelledby="scanModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else. </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="scanForm">
-                            <div class="mb-3">
-                                <h5 class="modal-title" id="scanModalLabel">Scanning email</h5>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <div class="text-center">
-                            <div class="spinner-border" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
-                        <h3>Results</h3>
-                        <div id="results"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <form id="scanForm">
+            <label for="emailInput">Enter Email:</label>
+            <input type="email" id="emailInput" required>
+            <button type="submit">Scan</button>
+        </form>
+        <div id="loadingSpinner" style="display:none;">Loading...</div>
+        <div id="results"></div>
     </main>
 </body>
-</container>
+
 </html>
