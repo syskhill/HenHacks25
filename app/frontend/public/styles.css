@@ -6,10 +6,12 @@
  }
  
  body {
-   background-color: var(--theme-color);
+    background-color: var(--theme-color);
     font-family: Helvetica, sans-serif;
     color: var(--primary-font-color);
     padding: 10px;
+    width: 400px;
+    height: 500px;
  }
  
  a {
