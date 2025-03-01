@@ -1,4 +1,6 @@
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
+require('dotenv').config();
+
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateText?key=" + GEMINI_API_KEY;
 
 export async function analyzeEmailWithGemini(emailContent) {
