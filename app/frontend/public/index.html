@@ -8,24 +8,23 @@
     <link rel="stylesheet" href="styles.css">
     <script src="Popup.js" defer></script>
     <script src="Scanner.js" defer></script>
+    <script src="dangerMessages.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
     <header>
-        <h1>Welcome to Email Phishing Detection!</h1>
+        <h1>Email Scanner</h1>
         <h2>Do you want us to scan your email?</h2>
     </header>
     <main>
         <form id="scanForm">
-            <label for="emailInput">We wont let anyone know about any of your email!</label>
+            <label class="disclaimer">We wont let anyone know about any of your email!</label>
             <button id="scanButton">Scan</button>
+            <div class="disclaimer">We care about your online privacy!</div>
         </form>
-        <div id="loadingSpinner" style="display:none;">Loading...</div>
-        <div id="results" Results:></div>
-
+        <a href="results.html">Loading...></a>
+        <div id="dangerMessage"></div>
     </main>
-</div>
 </body>
 
 </html>
