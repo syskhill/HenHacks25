@@ -43,12 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (analysisResult >= '1' || analysisResult <='3') {
                 resultBody.classList.add("safe");
+                resultBody.style.color = "green";
             } else if (analysisResult >= '4' || analysisResult <= '7') {
                 resultBody.classList.add("warning");
+                resultBody.style.color = "yellow";
 
             } else {
                 resultBody.classList.add("danger");
-
+                resultBody.style.color = "red";
             }
         }
     }
