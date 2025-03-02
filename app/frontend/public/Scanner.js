@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const scanButton = document.getElementById("scanButton");
 

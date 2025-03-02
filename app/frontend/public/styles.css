@@ -1,4 +1,4 @@
-/*:root {
+:root {
    --theme-color: #00FFD9;
    --dark-bg: #121212;
    --light-bg: #ffffffd9;
@@ -35,30 +35,37 @@ body {
 }
 
 h1 {
-   font-size: 1.8rem;
+   font-size: 2rem;
    color: var(--font-color);
    margin-bottom: 10px;
 }
 
 h2 {
+   font-size: 1.5rem;
+   color: var(--font-color);
+   margin-bottom: 20px;
+}
+
+h3 {
    font-size: 1.2rem;
    color: var(--font-color);
    margin-bottom: 20px;
 }
 
-a {
-   display: inline-block;
+button {
    padding: 10px 20px;
    font-size: 1rem;
    color: white;
    background: var(--theme-color);
+   border: none;
    border-radius: 8px;
-   text-decoration: none;
+   cursor: pointer;
 }
 
-a:hover {
+button:hover {
    background: #00CCAA;
 }
+
 .safe {
    background-color: var(--safe-bg) !important;
 }
@@ -70,88 +77,9 @@ a:hover {
 .danger {
    background-color: var(--danger-bg) !important;
 }
-   */
-   :root {
-      --theme-color: #00FFD9;
-      --dark-bg: #121212;
-      --light-bg: #ffffffd9;
-      --font-color: #000000;
-      --safe-bg: #90EE90;
-      --warning-bg: #FFD700;
-      --danger-bg: #FF6347;
-   }
-   
-   * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-   }
-   
-   body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-   }
-   
-   .container {
-      width: 400px;
-      padding: 20px;
-      background-color: var(--light-bg);
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      text-align: center;
-   }
-   
-   h1 {
-      font-size: 2rem;
-      color: var(--font-color);
-      margin-bottom: 10px;
-   }
-   
-   h2 {
-      font-size: 1.5rem;
-      color: var(--font-color);
-      margin-bottom: 20px;
-   }
 
-   h3 {
-      font-size: 1.2rem;
-      color: var(--font-color);
-      margin-bottom: 20px;
-   }
-   
-   button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: white;
-      background: var(--theme-color);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-   }
-   
-   button:hover {
-      background: #00CCAA;
-   }
-   
-   .safe {
-      background-color: var(--safe-bg) !important;
-   }
-   
-   .warning {
-      background-color: var(--warning-bg) !important;
-   }
-   
-   .danger {
-      background-color: var(--danger-bg) !important;
-   }
-   
-    .scanResult {
-      font-size: 1.2rem;
-      color: var(--font-color);
-      margin-bottom: 20px;
-   }
+.scanResult {
+   font-size: 1.2rem; 
+   color: var(--font-color);
+   margin-bottom: 20px;
+}
