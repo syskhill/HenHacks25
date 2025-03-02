@@ -40,12 +40,27 @@ document.addEventListener("DOMContentLoaded", function () {
         if (analysisResult) {
             scanResult.textContent = analysisResult;
 
+<<<<<<< HEAD
             if (analysisResult.includes("Phishing")) {
                 resultBody.classList.add("danger");
             } else if (analysisResult.includes("Minimal phishing")) {
                 resultBody.classList.add("warning");
             } else {
                 resultBody.classList.add("safe");
+=======
+            if (score >= 1 && score <= 3) {
+                resultBody.classList.add("safe");
+                scanResult.style.backgroundColor = "green";
+                scanResult.textContent = "No phishing detected. Your email is safe.";
+            } else if (score >= 4 && score <= 6) {
+                resultBody.classList.add("warning");
+                scanResult.style.backgroundColor = "yellow";
+                scanResult.textContent = "Minimal phishing detected. Proceed with caution.";
+            } else {
+                resultBody.classList.add("danger");
+                scanResult.style.backgroundColor = "red";
+                scanResult.textContent = "DANGER! Phishing detected. Do not click any links!";
+>>>>>>> 36ad42b6800a362814c27fe0f11aec7b824313b5
             }
         }
     }
