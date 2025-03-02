@@ -52,7 +52,7 @@ function showDangerLevel(dangerLevel)
 
 document.getElementById("scanButton").addEventListener("click", function() {
     // Simulate AI backend response (rating 1-10)
-    const rating = Math.floor(Math.random() * 10) + 1;
+    const rating = 3;
     const container = document.getElementById("resultContainer");
     const resultText = document.getElementById("scanResult");
 
