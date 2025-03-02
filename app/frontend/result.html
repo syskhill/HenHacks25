@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <p id="result"></p>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const analysisResult = localStorage.getItem('analysisResult');
+            document.getElementById('result').textContent = analysisResult;
+        });
+
+        function goBack() {
+            window.location.href = 'popup.html';
+        }
+    </script>
+</body>
+</html>
