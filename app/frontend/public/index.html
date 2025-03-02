@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Email Scanner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-    <link rel="results" href="results.html">
 </head>
-<div class="container">
 <body>
-    <header>
-        <h1>Welcome to Email Phishing Protection!</h1>
-        <h2>Do you want us to scan your email?</h2>
-    </header>
-    <main>
+    <div class="container">
+        <header>
+            <h1>Welcome to Email Phishing Protection!</h1>
+            <h2>Do you want us to scan your email?</h2>
+        </header>
+        <main>
             <form id="scanForm">
-            <a href="results.html">Click me to Scan</a>
-        </form>
-        <script src="Scanner.js"></script>
-
-    </main>
+                <button type="button" id="scanButton">Click to Scan</button>
+            </form>
+        </main>
+    </div>
+    <script src="Scanner.js"></script>
 </body>
-</div>
-
 </html>
