@@ -15,7 +15,7 @@ document.getElementById('analyzeEmail').addEventListener('click', async () => {
 
         const data = await response.json();
         localStorage.setItem('analysisResult', data.analysis);
-        window.location.href = 'result.html';
+        window.location.href = '../public/result.html';
     } catch (error) {
         console.error("Error analyzing email:", error);
         alert("Failed to analyze email.");
@@ -37,7 +37,7 @@ document.getElementById('analyzeEmail').addEventListener('click', async () => {
 
         const data = await response.json();
         localStorage.setItem('analysisResult', data.analysis);
-        window.location.href = 'result.html';
+        window.location.href = '../public/result.html';
     } catch (error) {
         console.error("Error analyzing email:", error);
         alert("Failed to analyze email.");
