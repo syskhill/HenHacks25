@@ -50,22 +50,38 @@ function showDangerLevel(dangerLevel)
 }
 */
 document.addEventListener("DOMContentLoaded", function() {
-document.getElementById("scanButton").addEventListener("click", function() {
-    // Simulate AI backend response (rating 1-10)
-    const rating = 3;
-    const container = document.getElementById("resultContainer");
-    const resultText = document.getElementById("scanResult");
-    console.log("Scan button clicked! AI rating:", rating); // Debugging log
+    console.log("Scanner.js loaded and running!");
 
-    if (rating >= 1 && rating <= 3) {
-        container.className = "container safe";
-        resultText.textContent = "No detection of phishing. This email is safe.";
-    } else if (rating >= 4 && rating <= 6) {
-        container.className = "container warning";
-        resultText.textContent = "Some signs of phishing detected. Proceed with caution.";
-    } else if (rating >= 7 && rating <= 10) {
-        container.className = "container danger";
-        resultText.textContent = "High risk of phishing! Do not click any links in this email.";
+    const scanButton = document.getElementById("scanButton");
+    if (!scanButton) {
+        console.error("Error: scanButton not found!");
+        return;
     }
-});
+
+    scanButton.addEventListener("click", function() {
+        console.log("Scan button clicked!");
+
+        // Simulate AI backend response (rating 1-10)
+        const rating = Math.floor(Math.random() * 10) + 1;
+        console.log("AI Rating:", rating);
+
+        const container = document.getElementById("resultContainer");
+        const resultText = document.getElementById("scanResult");
+
+        if (!container || !resultText) {
+            console.error("Error: Container or ResultText not found!");
+            return;
+        }
+
+        if (rating >= 1 && rating <= 3) {
+            container.className = "container safe";
+            resultText.textContent = "No detection of phishing. This email is safe.";
+        } else if (rating >= 4 && rating <= 6) {
+            container.className = "container warning";
+            resultText.textContent = "Some signs of phishing detected. Proceed with caution.";
+        } else if (rating >= 7 && rating <= 10) {
+            container.className = "container danger";
+            resultText.textContent = "High risk of phishing! Do not click any links in this email.";
+        }
+    });
 });
