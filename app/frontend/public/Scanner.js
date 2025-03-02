@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
+            resultBody.style.backgroundImage = "none";
 
             if (analysisResult >= 1 || analysisResult <=3) {
                 resultBody.classList.add("safe");

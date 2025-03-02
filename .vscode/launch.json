@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open Popup.html",
-            "file": "c:\\Users\\conno\\Downloads\\Hackathons\\HenHacks25\\app\\frontend\\Popup.html"
+            "file": "C:\\Users\\krste\\.vscode\\HenHacks25\\app\\frontend\\public\\index.html"
         }
     ]
 }
