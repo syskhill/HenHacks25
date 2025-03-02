@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const scanButton = document.getElementById("scanButton");
+    console.log("%c color: black", "font-size: large");
 
     if (scanButton) {
         scanButton.addEventListener("click", async function () {
@@ -44,10 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (scanResult.textContent <=3) {
                 resultBody.classList.add("safe");
                 resultBody.style.color = "green";
+                console.log("This email is safe. Feel free to open it.");
             } else if (scanResult.textContent <= 7) {
                 resultBody.classList.add("warning");
+                resultBody.style.color = "yellow";
+                console.log("This email is potentially harmful. Proceed with caution.");
             } else {
-                resultBody.classList.add("safe");
+                resultBody.classList.add("danger");
+                resultBody.style.color = "red";
+                console.log("This email is dangerous. Do not open it.");
             }
         }
     }

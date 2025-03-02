@@ -1,9 +1,9 @@
 :root {
-   --theme-color: #00FFD9;
+   --theme-color: #32ea94;
    --dark-bg: #121212;
    --light-bg: #ffffffd9;
    --font-color: #000000;
-   --safe-bg: #90EE90;
+   --safe-bg: #3fe43f;
    --warning-bg: #FFD700;
    --danger-bg: #ff2701;
 }
@@ -88,4 +88,5 @@ button:hover {
    color: var(--font-color);
    margin-bottom: 10px;
 }
+
 
