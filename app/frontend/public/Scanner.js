@@ -2,10 +2,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const scanButton = document.getElementById("scanButton");
 
     if (scanButton) {
-        scanButton.addEventListener("click", function () {
-            const phishingScore = Math.floor(Math.random() * 10) + 1;
-            localStorage.setItem("phishingScore", phishingScore);
-            window.location.href = "results.html";
+        scanButton.addEventListener("click", async function () {
+            const emailContent = document.getElementById('emailTextArea').value;
+
+            if (!emailContent.trim()) {
+                alert("Please enter email content to analyze.");
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ emailContent }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                localStorage.setItem('analysisResult', data.analysis);
+                window.location.href = 'results.html';
+            } catch (error) {
+                console.error("Error analyzing email:", error);
+                alert("Failed to analyze email.");
+            }
         });
     }
 
@@ -13,11 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const scanResult = document.getElementById("scanResult");
 
     if (resultBody && scanResult) {
-        const phishingScore = localStorage.getItem("phishingScore");
+        const analysisResult = localStorage.getItem('analysisResult');
 
-        if (phishingScore) {
-            const score = parseInt(phishingScore, 10);
+        if (analysisResult) {
+            scanResult.textContent = analysisResult;
 
+<<<<<<< HEAD
+            if (analysisResult.includes("Phishing")) {
+                resultBody.classList.add("danger");
+            } else if (analysisResult.includes("Minimal phishing")) {
+                resultBody.classList.add("warning");
+            } else {
+                resultBody.classList.add("safe");
+=======
             if (score >= 1 && score <= 3) {
                 resultBody.classList.add("safe");
                 scanResult.style.backgroundColor = "green";
@@ -30,8 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 resultBody.classList.add("danger");
                 scanResult.style.backgroundColor = "red";
                 scanResult.textContent = "DANGER! Phishing detected. Do not click any links!";
+>>>>>>> 36ad42b6800a362814c27fe0f11aec7b824313b5
             }
         }
     }
 });
+
+
 
