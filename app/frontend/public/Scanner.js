@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
+<<<<<<< HEAD
 
             if (analysisResult.includes("Phishing")) {
                 resultBody.classList.add("danger");
@@ -46,6 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 resultBody.classList.add("warning");
             } else {
                 resultBody.classList.add("safe");
+=======
+            if (score >= 1 && score <= 3) {
+                resultBody.classList.add("safe");
+                resultBody.style.backgroundColor = "green";
+            } else if (score >= 4 && score <= 6) {
+                resultBody.classList.add("warning");
+                resultBody.style.backgroundColor = "yellow";
+            } else {
+                resultBody.classList.add("danger");
+                resultBody.style.backgroundColor = "red";
+
+>>>>>>> 1f39d2eb1ebb22b346e76f47ec8ce09d977e64f5
             }
         }
     }
