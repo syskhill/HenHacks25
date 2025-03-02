@@ -39,17 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
-            resultBody.style.backgroundImage = "none"; 
+            resultBody.style.backgroundImage = "none";
+
+            const score = parseInt(analysisResult, 10);
+
             if (score >= 1 && score <= 3) {
                 resultBody.classList.add("safe");
-                resultBody.style.backgroundColor = "green";
+                resultBody.style.backgroundColor = "var(--safe-bg)";
             } else if (score >= 4 && score <= 6) {
                 resultBody.classList.add("warning");
-                resultBody.style.backgroundColor = "yellow";
+                resultBody.style.backgroundColor = "var(--warning-bg)";
             } else {
                 resultBody.classList.add("danger");
-                resultBody.style.backgroundColor = "red";
-
+                resultBody.style.backgroundColor = "var(--danger-bg)";
             }
         }
     }
