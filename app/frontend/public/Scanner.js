@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
             scanResult.textContent = analysisResult;
             resultBody.style.backgroundImage = "none";
 
-            if (scanResult.textContent >= 1 || scanResult.textContent <=3) {
+            if (scanResult.textContent <=3) {
                 resultBody.classList.add("safe");
                 resultBody.style.color = "green";
-            } else if (scanResult.textContent >= 4 || scanResult.textContent <= 7) {
+            } else if (scanResult.textContent <= 7) {
                 resultBody.classList.add("warning");
                 resultBody.style.color = "yellow";
             } else {
