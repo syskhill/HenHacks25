@@ -1,8 +1,11 @@
 :root {
    --theme-color: #00FFD9;
    --dark-bg: #121212;
-   --light-bg: rgba(255, 255, 255, 0.85);
+   --light-bg: #ffffffd9;
    --font-color: #000000;
+   --safe-bg: #90EE90;
+   --warning-bg: #FFD700;
+   --danger-bg: #FF6347;
 }
 
 * {
@@ -56,4 +59,14 @@ a {
 a:hover {
    background: #00CCAA;
 }
+.safe {
+   background-color: var(--safe-bg) !important;
+}
 
+.warning {
+   background-color: var(--warning-bg) !important;
+}
+
+.danger {
+   background-color: var(--danger-bg) !important;
+}

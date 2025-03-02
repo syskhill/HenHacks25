@@ -1,4 +1,4 @@
-document.getElementById('scanForm').addEventListener('submit', async function (event) {
+/*document.getElementById('scanForm').addEventListener('submit', async function (event) {
     event.preventDefault();
     const emailInput = document.getElementById('emailInput').value;
     const resultsDiv = document.getElementById('results');
@@ -48,3 +48,22 @@ function showDangerLevel(email)
         messageElement.textContent = 'Unable to determine the danger level.';
     }
 }
+*/
+
+document.getElementById("scanButton").addEventListener("click", function() {
+    // Simulate AI backend response (rating 1-10)
+    const rating = Math.floor(Math.random() * 10) + 1;
+    const container = document.getElementById("resultContainer");
+    const resultText = document.getElementById("scanResult");
+
+    if (rating >= 1 && rating <= 3) {
+        container.className = "container safe";
+        resultText.textContent = "No detection of phishing. This email is safe.";
+    } else if (rating >= 4 && rating <= 6) {
+        container.className = "container warning";
+        resultText.textContent = "Some signs of phishing detected. Proceed with caution.";
+    } else if (rating >= 7 && rating <= 10) {
+        container.className = "container danger";
+        resultText.textContent = "High risk of phishing! Do not click any links in this email.";
+    }
+});
