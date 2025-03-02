@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
+            resultBody.style.backgroundImage = "none"; 
             if (score >= 1 && score <= 3) {
                 resultBody.classList.add("safe");
                 resultBody.style.backgroundColor = "green";
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 resultBody.classList.add("danger");
                 resultBody.style.backgroundColor = "red";
-
             }
         }
     }
