@@ -20,12 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (score >= 1 && score <= 3) {
                 resultBody.classList.add("safe");
+                scanResult.style.backgroundColor = "green";
                 scanResult.textContent = "No phishing detected. Your email is safe.";
             } else if (score >= 4 && score <= 6) {
                 resultBody.classList.add("warning");
+                scanResult.style.backgroundColor = "yellow";
                 scanResult.textContent = "Minimal phishing detected. Proceed with caution.";
             } else {
                 resultBody.classList.add("danger");
+                scanResult.style.backgroundColor = "red";
                 scanResult.textContent = "DANGER! Phishing detected. Do not click any links!";
             }
         }
