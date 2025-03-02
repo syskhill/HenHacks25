@@ -1,16 +1,16 @@
-chrome.action.onClicked.addListener((tab) => {
-    chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      function: () => {
-        chrome.runtime.sendMessage({ action: "getEmailContent" }, (response) => {
-          if (response && response.emailContent) {
-            fetch('http://localhost:3000/analyze-email', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ emailContent: response.emailContent })
-            })
+/* chrome.action.onClick.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: () => {
+      chrome.runtime.sendMessage({ action: "getEmailContent" }, (response) => {
+        if (response && response.emailContent) {
+          fetch('http://localhost:3000/analyze-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ emailContent: response.emailContent })
+          })
             .then(res => res.json())
             .then(data => {
               alert(`Analysis: ${data.analysis}`);
@@ -18,10 +18,16 @@ chrome.action.onClicked.addListener((tab) => {
             .catch(error => {
               console.error('Error:', error);
             });
-          } else {
-            alert('No email content found.');
-          }
-        });
-      }
-    });
+        } else {
+          alert('No email content found.');
+        }
+      });
+    }
   });
+});
+*/
+chrome.action.onClicked.addListener((tab) => {
+  chrome.tabs.captureVisibleTab(null, {}, (image) => {
+    chrome.runtime.sendMessage({ action: "analyzeScreenshot", image });
+  });
+});

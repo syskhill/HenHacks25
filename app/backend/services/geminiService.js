@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+/* const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
@@ -20,5 +20,28 @@ const analyzeEmail = async (emailContent) => {
         throw new Error("Failed to analyze email");
     }
 };
+*/
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-module.exports = { analyzeEmail };
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+
+const analyzeScreenshot = async (image) => {
+    try {
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        const text = `Analyze this screenshot and determine if it contains a phishing email. Screenshot: "${image}"`;
+
+        const result = await model.generateContent(text);
+
+        const response = await result.response;
+        const analysis = response.text() || "No valid response from Gemini";
+        return { analysis };
+        
+    } catch (error) {
+        console.error("❌ Error analyzing screenshot:", error);
+        throw new Error("Failed to analyze screenshot");
+    }
+};
+
+module.exports = { analyzeScreenshot };

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (scanButton) {
         scanButton.addEventListener("click", async function () {
-            // Extract email content from Gmail
             const emailContent = getEmailContent();
 
             if (!emailContent.trim()) {
@@ -41,18 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
+            resultBody.style.backgroundImage = "none"; // Remove the background image
 
-            if (scanResult.textContent <=3) {
+            const score = parseInt(analysisResult, 10); // Assuming analysisResult is a score
+
+            if (score >= 1 && score <= 3) {
                 resultBody.classList.add("safe");
-                resultBody.style.color = "green";
-                console.log("This email is safe. Feel free to open it.");
-            } else if (scanResult.textContent <= 7) {
+                resultBody.style.backgroundColor = "var(--safe-bg)";
+                console.log("This email is safe to open.");
+            } else if (score >= 4 && score <= 6) {
                 resultBody.classList.add("warning");
-                resultBody.style.color = "yellow";
+                resultBody.style.color = "var(--warning-bg)";
                 console.log("This email is potentially harmful. Proceed with caution.");
             } else {
                 resultBody.classList.add("danger");
-                resultBody.style.color = "red";
+                resultBody.style.color = "var(--danger-bg)";
                 console.log("This email is dangerous. Do not open it.");
             }
         }
