@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const { analyzeEmail } = require('./services/geminiService');
 
 const app = express();
@@ -8,18 +9,16 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 // Analyze email for phishing
 app.post('/analyze', async (req, res) => {
     try {
         const { emailContent } = req.body;
-
         if (!emailContent) {
             return res.status(400).json({ error: "Email content is required" });
         }
-
         const { analysis } = await analyzeEmail(emailContent);
-
         res.json({ analysis });
     } catch (error) {
         console.error("Error analyzing email:", error);
