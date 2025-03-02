@@ -72,19 +72,17 @@ button {
 button:hover {
    background: #00CCAA;
 }
-/*
 .safe {
-   background-color: var(--safe-bg) !important;
+   background-color: var(--safe-bg);
 }
 
 .warning {
-   background-color: var(--warning-bg) !important;
+   background-color: var(--warning-bg);
 }
 
 .danger {
-   background-color: var(--danger-bg) !important;
+   background-color: var(--danger-bg);
 }
-*/
 .scanResult {
    font-size: 1.2rem; 
    color: var(--font-color);
