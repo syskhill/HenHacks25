@@ -117,6 +117,12 @@ a:hover {
       color: var(--font-color);
       margin-bottom: 20px;
    }
+
+   h3 {
+      font-size: 1rem;
+      color: var(--font-color);
+      margin-bottom: 20px;
+   }
    
    button {
       padding: 10px 20px;
