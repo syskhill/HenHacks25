@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 resultBody.classList.add("danger");
                 resultBody.style.backgroundColor = "red";
+
             }
         }
     }
