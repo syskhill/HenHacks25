@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (analysisResult >= '4' || analysisResult <= '7') {
                 resultBody.classList.add("warning");
                 resultBody.style.color = "yellow";
-
             } else {
                 resultBody.classList.add("danger");
                 resultBody.style.color = "red";
