@@ -49,12 +49,13 @@ function showDangerLevel(dangerLevel)
     }
 }
 */
-
+document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("scanButton").addEventListener("click", function() {
     // Simulate AI backend response (rating 1-10)
     const rating = 3;
     const container = document.getElementById("resultContainer");
     const resultText = document.getElementById("scanResult");
+    console.log("Scan button clicked! AI rating:", rating); // Debugging log
 
     if (rating >= 1 && rating <= 3) {
         container.className = "container safe";
@@ -66,4 +67,5 @@ document.getElementById("scanButton").addEventListener("click", function() {
         container.className = "container danger";
         resultText.textContent = "High risk of phishing! Do not click any links in this email.";
     }
+});
 });
