@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (scanButton) {
         scanButton.addEventListener("click", async function () {
-            const emailContent = document.getElementById('emailTextArea').value;
+            // Extract email content from Gmail
+            const emailContent = getEmailContent();
 
             if (!emailContent.trim()) {
-                alert("Please enter email content to analyze.");
+                alert("Please open an email to analyze.");
                 return;
             }
 
@@ -39,23 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (analysisResult) {
             scanResult.textContent = analysisResult;
-            resultBody.style.backgroundImage = "none";
 
-            const score = parseInt(analysisResult, 10);
-
-            if (score >= 1 && score <= 3) {
-                resultBody.classList.add("safe");
-                resultBody.style.backgroundColor = "var(--safe-bg)";
-            } else if (score >= 4 && score <= 6) {
-                resultBody.classList.add("warning");
-                resultBody.style.backgroundColor = "var(--warning-bg)";
-            } else {
+            if (analysisResult.includes("Phishing")) {
                 resultBody.classList.add("danger");
-                resultBody.style.backgroundColor = "var(--danger-bg)";
+            } else if (analysisResult.includes("Minimal phishing")) {
+                resultBody.classList.add("warning");
+            } else {
+                resultBody.classList.add("safe");
             }
         }
     }
 });
+
+// Function to extract email content from Gmail
+function getEmailContent() {
+    const emailBody = document.querySelector('div[role="listitem"] .a3s'); // More robust selector for Gmail email body
+    return emailBody ? emailBody.innerText : '';
+}
 
 
 

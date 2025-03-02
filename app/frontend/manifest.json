@@ -3,11 +3,20 @@
     "name": "Phishing Email Analyzer",
     "version": "1.0",
     "description": "Analyze emails for phishing threats using Google Gemini.",
-    "permissions": ["activeTab", "storage"],
+    "permissions": ["activeTab", "storage", "scripting"],
     "host_permissions": ["http://localhost:5000/*"],
     "action": {
       "default_popup": "/public/index.html",
       "default_icon": "emailPhishingIcon.png"
-    }
+    },
+    "background": {
+        "service_worker": "background.js"
+      },
+      "content_scripts": [
+        {
+          "matches": ["https://mail.google.com/*"],
+          "js": ["content.js"]
+        }
+      ]
   }
   
