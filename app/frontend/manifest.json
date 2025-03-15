@@ -3,8 +3,14 @@
     "name": "Phishing Email Analyzer",
     "version": "1.0",
     "description": "Analyze emails for phishing threats using Google Gemini.",
-    "permissions": ["activeTab", "storage", "scripting"],
-    "host_permissions": ["http://localhost:5000/*"],
+    "permissions": ["activeTab", "storage", "scripting", "identity"],
+    "host_permissions": ["http://localhost:5000/*", "https://mail.google.com/*", "https://www.googleapis.com/*"],
+    "oauth2": {
+      "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ]
+    },
     "action": {
       "default_popup": "/public/index.html",
       "default_icon": "emailPhishingIcon.png"
